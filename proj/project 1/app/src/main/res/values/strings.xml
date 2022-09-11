@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">AndroidSample</string>
+    <string name="convert_string">convert</string>
+    <string name="dollars_hint">US dollars</string>
+    <string name="no_value_string">no value</string>
+</resources>
