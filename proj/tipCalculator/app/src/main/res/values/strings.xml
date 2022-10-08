@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">tipCalculator</string>
+    <string name="defText">Enter Bill Amount</string>
+</resources>
