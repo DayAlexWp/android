@@ -8,7 +8,7 @@ class MainViewModel : ViewModel() {
     private var result: MutableLiveData<String> = MutableLiveData()
 
     public fun addName(newName: String) { //setter
-        result.setValue(result.value + newName + "\n")
+        result.value = result.value + newName + "\n"
     }
 
     public fun getNames(): MutableLiveData<String> { return result } //getter

@@ -19,7 +19,7 @@ class MainFragment : Fragment() {
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
 
-    private var names: String = ""
+    private var names: String = " "
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -33,8 +33,14 @@ class MainFragment : Fragment() {
             viewModel.addName(binding.nameInput.text.toString() ) //adds user input to viewModel
         }
 
+        //added null check here.
         val resultObserver = Observer<String> {
-            result -> binding.namesBox.text = result.toString()
+            result ->
+            var namesStr = result.toString()
+            if (namesStr.contains("null")) {
+                namesStr = namesStr.drop(4)
+            }
+            binding.namesBox.text = namesStr
         }
 
         viewModel.getNames().observe(viewLifecycleOwner, resultObserver)
